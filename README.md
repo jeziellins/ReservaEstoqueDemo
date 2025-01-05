@@ -29,7 +29,7 @@ title Arquitetura do Sistema de Reserva de Estoque
 
 Container_Boundary(Gateway, "API Gateway Ocelot") {    
     Person(Usuario, "Usuário", "Faz Pedidos")
-    Container(API_Gateway, "API Gateway Ocelot", "Gateway", "Gerencia requisições para os microservices")
+    Container(API_Gateway, "API Gateway", "Ocelot", "Gerencia requisições para os microservices")
     Container(Consul, "Service Discovery", "Consul", "Gerencia service discovery dos microservices")    
 }
 
