@@ -58,13 +58,15 @@ System_Boundary(Componentes, "") {
     
 }
 
-Rel(Usuario, API_Gateway, "Faz requisições para")
-Rel(API_Gateway, MicroservicePedidos1, "Balanceia requisições")
+BiRel(Usuario, API_Gateway, "Faz requisições para")
+BiRel(API_Gateway, MicroservicePedidos1, "Balanceia requisições")
 Rel(MicroservicePedidos1, MessageBroker1, "Publica evento 'Novo Pedido'")
 Rel(MessageBroker1, MicroserviceStatus1, "Consome eventos")
 BiRel(MessageBroker1, MicroserviceEstoque1, "Consome e publica eventos")
-Rel(API_Gateway, MicroserviceStatus1, "Consulta status via Gateway")
+BiRel(API_Gateway, MicroserviceStatus1, "Consulta status via Gateway")
 
+UpdateRelStyle(API_Gateway, MicroservicePedidos1, $offsetX="-50", $offsetY="-20")
+UpdateRelStyle(API_Gateway, MicroserviceStatus1, $offsetX="-200", $offsetY="10")
 UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="3")
 ```
 
