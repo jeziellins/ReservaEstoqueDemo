@@ -28,23 +28,23 @@ C4Context
 title Arquitetura do Sistema de Reserva de Estoque
 
 Container_Boundary(Gateway, "API Gateway Ocelot") {    
-    Person(Usuario, "Usuário", "Faz solicitações para o sistema")
-    Container(API_Gateway, "API Gateway Ocelot", "Gateway", "Gerencia e balanceia as requisições para os microservices")    
+    Person(Usuario, "Usuário", "Faz Pedidos")
+    Container(API_Gateway, "API Gateway Ocelot", "Gateway", "Gerencia requisições para os microservices")    
 }
 
 System_Boundary(Componentes, "") {
     Container_Boundary(PedidosCluster, "Cluster de Microservices Pedidos") {
-        Container(MicroservicePedidos1, "Microservice Pedidos", "Microservice", "Processa pedidos e publica eventos")
+        Container(MicroservicePedidos1, "Microservice Pedidos", "Microservice", "Processa pedidos")
         
     }
 
     Container_Boundary(EstoqueCluster, "Cluster de Microservices Estoque") {
-        Container(MicroserviceEstoque1, "Microservice Estoque", "Microservice", "Verifica, reserva ou rejeita pedidos de estoque")
+        Container(MicroserviceEstoque1, "Microservice Estoque", "Microservice", "Processa estoque")
         
     }
 
     Container_Boundary(MessageBroker, "Cluster de Microservices Estoque") {
-        Container(MessageBroker1, "RabbitMQ", "Message Broker", "Gerencia eventos entre os microservices")
+        Container(MessageBroker1, "RabbitMQ", "Message Broker", "Gerencia eventos")
     }
     
 }
