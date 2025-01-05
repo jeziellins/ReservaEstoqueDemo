@@ -67,6 +67,9 @@ BiRel(API_Gateway, MicroserviceStatus1, "Consulta status via Gateway")
 
 UpdateRelStyle(API_Gateway, MicroservicePedidos1, $offsetX="-50", $offsetY="-20")
 UpdateRelStyle(API_Gateway, MicroserviceStatus1, $offsetX="-200", $offsetY="10")
+UpdateRelStyle(MicroservicePedidos1, MessageBroker1, $offsetX="-80", $offsetY="-20")
+UpdateRelStyle(MessageBroker1, MicroserviceStatus1, $offsetX="-80", $offsetY="-20")
+UpdateRelStyle(MessageBroker1, MicroserviceEstoque1, $offsetX="-80", $offsetY="-20")
 UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="3")
 ```
 
