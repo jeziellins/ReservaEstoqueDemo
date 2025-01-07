@@ -58,10 +58,13 @@ Rel(MicroservicePedidos1, MicroservicePedidosDB, "Armazena Dados de Pedidos")
 Rel(MicroserviceEstoque1, MicroserviceEstoqueDB, "Armazena Dados de Estoque")
 
 UpdateRelStyle(API_Gateway, MicroservicePedidos1, $offsetX="-50", $offsetY="-20")
-UpdateRelStyle(MicroservicePedidos1, MessageBroker1, $offsetX="-80", $offsetY="-20")
+UpdateRelStyle(MicroservicePedidos1, MessageBroker1, $offsetX="-44", $offsetY="-20")
 UpdateRelStyle(MessageBroker1, MicroserviceEstoque1, $offsetX="-80", $offsetY="-20")
 UpdateRelStyle(MicroservicePedidos1, MicroservicePedidosDB, $offsetX="-80", $offsetY="0")
 UpdateRelStyle(MicroserviceEstoque1, MicroserviceEstoqueDB, $offsetX="-80", $offsetY="0")
+UpdateRelStyle(Usuario, API_Gateway, $offsetX="-60", $offsetY="0")
+UpdateRelStyle(API_Gateway, Consul, $offsetX="-90", $offsetY="0")
+
 UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="2")
 ```
 
